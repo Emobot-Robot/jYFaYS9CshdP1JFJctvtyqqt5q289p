@@ -1,0 +1,12 @@
+#!/bin/bash
+
+ABSOLUTE_PATH_TO_WORKING_FOLDER="$( cd "$( dirname "${BASH_SOURCE[0]}" )/.." && pwd )"
+
+cd "$ABSOLUTE_PATH_TO_WORKING_FOLDER"
+
+source venv/bin/activate
+
+export LABEL_STUDIO_LOCAL_FILES_SERVING_ENABLED=true
+export LABEL_STUDIO_LOCAL_FILES_DOCUMENT_ROOT="$ABSOLUTE_PATH_TO_WORKING_FOLDER"
+
+label-studio
